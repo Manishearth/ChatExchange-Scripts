@@ -1,7 +1,7 @@
 #requires https://pypi.python.org/pypi/websocket-client/
 import websocket
 import threading
-import json,os,sys
+import json,os,sys,getpass
 from ChatExchange.SEChatWrapper import *
 from BeautifulSoup import *
 
@@ -22,13 +22,10 @@ wrap.login(username,password)
 
 def handlepost(data):
   a=json.loads(json.loads(data)['data'])['body']
-  print a
   b=BeautifulSoup(a).find('a',{'class':'question-hyperlink'})
-  print b
-  s="[ LAZERS v2 ]  [%s](%s)" % (" ".join(b.contents),"http://gaming.stackexchange.com"+b['href'])
+  s="[ [LAZERS v2](https://github.com/Manishearth/ChatExchange-Scripts/blob/master/lazers.py) ]  [%s](%s)" % (" ".join(b.contents),"http://gaming.stackexchange.com"+b['href'])
   print s
   wrap.sendMessage("35",s)
-  #wrapm.sendMessage("89",s)
 
 ws = websocket.create_connection("ws://sockets.ny.stackexchange.com/")
 ws.send("41-questions-newest")

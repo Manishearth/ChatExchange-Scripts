@@ -3,7 +3,7 @@
 # by Manish Goregaokar
 # requires https://github.com/Manishearth/ChatExchange
 from random import choice
-import json,os,sys
+import json,os,sys,getpass
 from ChatExchange.SEChatWrapper import *
 
 if("ChatExchangeU" in os.environ):
