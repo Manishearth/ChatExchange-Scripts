@@ -2,8 +2,9 @@
 import websocket
 import threading
 import json,os,sys,getpass
-from ChatExchange.SEChatWrapper import *
 from BeautifulSoup import *
+
+from ChatExchange.chatexchange.wrapper import *
 
 if("ChatExchangeU" in os.environ):
   username=os.environ["ChatExchangeU"]

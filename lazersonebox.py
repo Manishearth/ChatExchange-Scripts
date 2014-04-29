@@ -2,7 +2,7 @@
 import websocket
 import threading
 import json,os,sys,getpass
-from ChatExchange.SEChatWrapper import *
+from ChatExchange.chatexchange.wrapper import *
 from BeautifulSoup import *
 
 if("ChatExchangeU" in os.environ):

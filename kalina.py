@@ -4,7 +4,8 @@
 # requires https://github.com/Manishearth/ChatExchange
 from random import choice
 import json,os,sys,getpass
-from ChatExchange.SEChatWrapper import *
+
+from ChatExchange.chatexchange.wrapper import *
 
 if("ChatExchangeU" in os.environ):
   username=os.environ["ChatExchangeU"]
