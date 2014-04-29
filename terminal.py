@@ -32,7 +32,6 @@ def omsg(msg,wrap):
     if 'content' not in msg:
         msg['content'] = '[no content]'
     print ""
-    print ">>",msg['event_type'],"("+msg['user_name']+") ",msg['content']
     print ">> %s (%s) %s" % (msg['event_type'], msg['user_name'], msg['content'])
     print ""
     if(msg['content'].startswith("!!/random")):
@@ -43,11 +42,7 @@ def omsg(msg,wrap):
 
 
 a.joinRoom(room)
-#def omsg2(msg):
-#  print msg
 a.watchRoom(room,omsg,1)
-#print a.sendMessage("11540","Manish is still testing the wrapper --the wrapper, ca 15 milliseconds ago")
-#a.br.initSocket("651",omsg2)
 print "See http://meta.stackexchange.com/a/218443/178438 for information on event type codes"
 print "Ready"
 while(True):
